@@ -1,0 +1,973 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2024-12-08T17:44:18.260449966Z",
+  "ArtifactName": ".",
+  "ArtifactType": "filesystem",
+  "Metadata": {
+    "ImageConfig": {
+      "architecture": "",
+      "created": "0001-01-01T00:00:00Z",
+      "os": "",
+      "rootfs": {
+        "type": "",
+        "diff_ids": null
+      },
+      "config": {}
+    }
+  },
+  "Results": [
+    {
+      "Target": "pom.xml",
+      "Class": "lang-pkgs",
+      "Type": "pom",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2024-34750",
+          "PkgID": "org.apache.tomcat.embed:tomcat-embed-core:10.1.18",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-core",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@10.1.18",
+            "UID": "b6bfbe5b7203527"
+          },
+          "InstalledVersion": "10.1.18",
+          "FixedVersion": "11.0.0-M21, 10.1.25, 9.0.90",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-34750",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "tomcat: Improper Handling of Exceptional Conditions",
+          "Description": "Improper Handling of Exceptional Conditions, Uncontrolled Resource Consumption vulnerability in Apache Tomcat. When processing an HTTP/2 stream, Tomcat did not handle some cases of excessive HTTP headers correctly. This led to a miscounting of active HTTP/2 streams which in turn led to the use of an incorrect infinite timeout which allowed connections to remain open which should have been closed.\n\nThis issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M20, from 10.1.0-M1 through 10.1.24, from 9.0.0-M1 through 9.0.89.\n\nUsers are recommended to upgrade to version 11.0.0-M21, 10.1.25 or 9.0.90, which fixes the issue.\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-400",
+            "CWE-755"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "ghsa": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2024:5693",
+            "https://access.redhat.com/security/cve/CVE-2024-34750",
+            "https://bugzilla.redhat.com/2295651",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2295651",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-34750",
+            "https://errata.almalinux.org/9/ALSA-2024-5693.html",
+            "https://errata.rockylinux.org/RLSA-2024:5693",
+            "https://github.com/apache/tomcat",
+            "https://github.com/apache/tomcat/commit/2344a4c0d03e307ba6b8ab6dc8b894cc8bac63f2",
+            "https://github.com/apache/tomcat/commit/2afae300c9ac9c0e516e2e9de580847d925365c3",
+            "https://github.com/apache/tomcat/commit/9fec9a82887853402833a80b584e3762c7423f5f",
+            "https://linux.oracle.com/cve/CVE-2024-34750.html",
+            "https://linux.oracle.com/errata/ELSA-2024-5694.html",
+            "https://lists.apache.org/thread/4kqf0bc9gxymjc2x7v3p7dvplnl77y8l",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-34750",
+            "https://tomcat.apache.org/security-10.html",
+            "https://tomcat.apache.org/security-11.html",
+            "https://tomcat.apache.org/security-9.html",
+            "https://www.cve.org/CVERecord?id=CVE-2024-34750"
+          ],
+          "PublishedDate": "2024-07-03T20:15:04.083Z",
+          "LastModifiedDate": "2024-07-09T16:22:37.12Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-24549",
+          "PkgID": "org.apache.tomcat.embed:tomcat-embed-core:10.1.18",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-core",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-core@10.1.18",
+            "UID": "b6bfbe5b7203527"
+          },
+          "InstalledVersion": "10.1.18",
+          "FixedVersion": "8.5.99, 9.0.86, 10.1.19, 11.0.0-M17",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-24549",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "Tomcat: HTTP/2 header handling DoS",
+          "Description": "Denial of Service due to improper input validation vulnerability for HTTP/2 requests in Apache Tomcat. When processing an HTTP/2 request, if the request exceeded any of the configured limits for headers, the associated HTTP/2 stream was not reset until after all of the headers had been processed.This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.\n\nUsers are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.\n\n",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-20"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "ghsa": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/03/13/3",
+            "https://access.redhat.com/errata/RHSA-2024:3307",
+            "https://access.redhat.com/security/cve/CVE-2024-24549",
+            "https://bugzilla.redhat.com/2269607",
+            "https://bugzilla.redhat.com/2269608",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2269607",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2269608",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-23672",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-24549",
+            "https://errata.almalinux.org/9/ALSA-2024-3307.html",
+            "https://errata.rockylinux.org/RLSA-2024:3307",
+            "https://github.com/apache/tomcat",
+            "https://github.com/apache/tomcat/commit/0cac540a882220231ba7a82330483cbd5f6b1f96",
+            "https://github.com/apache/tomcat/commit/810f49d5ff6d64b704af85d5b8d0aab9ec3c83f5",
+            "https://github.com/apache/tomcat/commit/8e03be9f2698f2da9027d40b9e9c0c9429b74dc0",
+            "https://github.com/apache/tomcat/commit/d07c82194edb69d99b438828fe2cbfadbb207843",
+            "https://linux.oracle.com/cve/CVE-2024-24549.html",
+            "https://linux.oracle.com/errata/ELSA-2024-3666.html",
+            "https://lists.apache.org/thread/4c50rmomhbbsdgfjsgwlb51xdwfjdcvg",
+            "https://lists.debian.org/debian-lts-announce/2024/04/msg00001.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UWIS5MMGYDZBLJYT674ZI5AWFHDZ46B",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UWIS5MMGYDZBLJYT674ZI5AWFHDZ46B/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/736G4GPZWS2DSQO5WKXO3G6OMZKFEK55",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/736G4GPZWS2DSQO5WKXO3G6OMZKFEK55/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-24549",
+            "https://security.netapp.com/advisory/ntap-20240402-0002",
+            "https://security.netapp.com/advisory/ntap-20240402-0002/",
+            "https://www.cve.org/CVERecord?id=CVE-2024-24549"
+          ],
+          "PublishedDate": "2024-03-13T16:15:29.373Z",
+          "LastModifiedDate": "2024-11-04T22:35:04.083Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-23672",
+          "PkgID": "org.apache.tomcat.embed:tomcat-embed-websocket:10.1.18",
+          "PkgName": "org.apache.tomcat.embed:tomcat-embed-websocket",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.apache.tomcat.embed/tomcat-embed-websocket@10.1.18",
+            "UID": "d31cc599eb4482d"
+          },
+          "InstalledVersion": "10.1.18",
+          "FixedVersion": "11.0.0-M17, 10.1.19, 9.0.86, 8.5.99",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23672",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "Tomcat: WebSocket DoS with incomplete closing handshake",
+          "Description": "Denial of Service via incomplete cleanup vulnerability in Apache Tomcat. It was possible for WebSocket clients to keep WebSocket connections open leading to increased resource consumption.This issue affects Apache Tomcat: from 11.0.0-M1 through 11.0.0-M16, from 10.1.0-M1 through 10.1.18, from 9.0.0-M1 through 9.0.85, from 8.5.0 through 8.5.98.\n\nUsers are recommended to upgrade to version 11.0.0-M17, 10.1.19, 9.0.86 or 8.5.99 which fix the issue.\n\n",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-459"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "ghsa": 2,
+            "oracle-oval": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+              "V3Score": 6.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2024/03/13/4",
+            "https://access.redhat.com/errata/RHSA-2024:3307",
+            "https://access.redhat.com/security/cve/CVE-2024-23672",
+            "https://bugzilla.redhat.com/2269607",
+            "https://bugzilla.redhat.com/2269608",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2269607",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2269608",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-23672",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-24549",
+            "https://errata.almalinux.org/9/ALSA-2024-3307.html",
+            "https://errata.rockylinux.org/RLSA-2024:3307",
+            "https://github.com/apache/tomcat",
+            "https://github.com/apache/tomcat/commit/0052b374684b613b0c849899b325ebe334ac6501",
+            "https://github.com/apache/tomcat/commit/0052b374684b613b0c849899b325ebe334ac6501 (10.1.19)",
+            "https://github.com/apache/tomcat/commit/3631adb1342d8bbd8598802a12b63ad02c37d591",
+            "https://github.com/apache/tomcat/commit/52d6650e062d880704898d7d8c1b2b7a3efe8068",
+            "https://github.com/apache/tomcat/commit/52d6650e062d880704898d7d8c1b2b7a3efe8068 (9.0.86)",
+            "https://github.com/apache/tomcat/commit/b0e3b1bd78de270d53e319d7cb79eb282aa53cb9",
+            "https://linux.oracle.com/cve/CVE-2024-23672.html",
+            "https://linux.oracle.com/errata/ELSA-2024-3666.html",
+            "https://lists.apache.org/thread/cmpswfx6tj4s7x0nxxosvfqs11lvdx2f",
+            "https://lists.debian.org/debian-lts-announce/2024/04/msg00001.html",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UWIS5MMGYDZBLJYT674ZI5AWFHDZ46B",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/3UWIS5MMGYDZBLJYT674ZI5AWFHDZ46B/",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/736G4GPZWS2DSQO5WKXO3G6OMZKFEK55",
+            "https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraproject.org/message/736G4GPZWS2DSQO5WKXO3G6OMZKFEK55/",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-23672",
+            "https://security.netapp.com/advisory/ntap-20240402-0002",
+            "https://security.netapp.com/advisory/ntap-20240402-0002/",
+            "https://ubuntu.com/security/notices/USN-7106-1",
+            "https://www.cve.org/CVERecord?id=CVE-2024-23672"
+          ],
+          "PublishedDate": "2024-03-13T16:15:29.287Z",
+          "LastModifiedDate": "2024-11-18T22:35:02.363Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22234",
+          "PkgID": "org.springframework.security:spring-security-core:6.2.1",
+          "PkgName": "org.springframework.security:spring-security-core",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework.security/spring-security-core@6.2.1",
+            "UID": "df04e2a8aebe027"
+          },
+          "InstalledVersion": "6.2.1",
+          "FixedVersion": "6.1.7, 6.2.2",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22234",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: Broken Access Control in Spring Security With Direct Use of isFullyAuthenticated",
+          "Description": "In Spring Security, versions 6.1.x prior to 6.1.7 and versions 6.2.x prior to 6.2.2, an application is vulnerable to broken access control when it directly uses the AuthenticationTrustResolver.isFullyAuthenticated(Authentication) method.\n\nSpecifically, an application is vulnerable if:\n\n  *  The application uses AuthenticationTrustResolver.isFullyAuthenticated(Authentication) directly and a null authentication parameter is passed to it resulting in an erroneous true return value.\n\n\nAn application is not vulnerable if any of the following is true:\n\n  *  The application does not use AuthenticationTrustResolver.isFullyAuthenticated(Authentication) directly.\n  *  The application does not pass null to AuthenticationTrustResolver.isFullyAuthenticated\n  *  The application only uses isFullyAuthenticated via  Method Security https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html  or  HTTP Request Security https://docs.spring.io/spring-security/reference/servlet/authorization/authorize-http-requests.html \n\n\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-284"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-22234",
+            "https://github.com/spring-projects/spring-security",
+            "https://github.com/spring-projects/spring-security/commit/750cb30ce44d279c2f54c845d375e6a58bded569",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22234",
+            "https://security.netapp.com/advisory/ntap-20240315-0003",
+            "https://security.netapp.com/advisory/ntap-20240315-0003/",
+            "https://spring.io/security/cve-2024-22234",
+            "https://www.cve.org/CVERecord?id=CVE-2024-22234"
+          ],
+          "PublishedDate": "2024-02-20T07:15:09.967Z",
+          "LastModifiedDate": "2024-08-01T13:46:53.813Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22257",
+          "PkgID": "org.springframework.security:spring-security-core:6.2.1",
+          "PkgName": "org.springframework.security:spring-security-core",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework.security/spring-security-core@6.2.1",
+            "UID": "df04e2a8aebe027"
+          },
+          "InstalledVersion": "6.2.1",
+          "FixedVersion": "5.7.12, 5.8.11, 6.1.8, 6.2.3",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22257",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: Broken Access Control With Direct Use of AuthenticatedVoter",
+          "Description": "In Spring Security, versions 5.7.x prior to 5.7.12, 5.8.x prior to \n5.8.11, versions 6.0.x prior to 6.0.9, versions 6.1.x prior to 6.1.8, \nversions 6.2.x prior to 6.2.3, an application is possible vulnerable to \nbroken access control when it directly uses the AuthenticatedVoter#vote passing a null Authentication parameter.\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-862"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N",
+              "V3Score": 8.2
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-22257",
+            "https://github.com/spring-projects/spring-security",
+            "https://github.com/spring-projects/spring-security/commit/5a7f12f1a9fdb4edaab6f61495f1d781a7273b61",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22257",
+            "https://security.netapp.com/advisory/ntap-20240419-0005",
+            "https://security.netapp.com/advisory/ntap-20240419-0005/",
+            "https://spring.io/security/cve-2024-22257",
+            "https://www.cve.org/CVERecord?id=CVE-2024-22257"
+          ],
+          "PublishedDate": "2024-03-18T15:15:41.79Z",
+          "LastModifiedDate": "2024-11-12T16:35:07.147Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38821",
+          "PkgID": "org.springframework.security:spring-security-web:6.2.1",
+          "PkgName": "org.springframework.security:spring-security-web",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework.security/spring-security-web@6.2.1",
+            "UID": "7744155d27076dcd"
+          },
+          "InstalledVersion": "6.2.1",
+          "FixedVersion": "5.7.13, 5.8.15, 6.2.7, 6.0.13, 6.1.11, 6.3.4",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38821",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "Spring-WebFlux: Authorization Bypass of Static Resources in WebFlux Applications",
+          "Description": "Spring WebFlux applications that have Spring Security authorization rules on static resources can be bypassed under certain circumstances.\n\nFor this to impact an application, all of the following must be true:\n\n  *  It must be a WebFlux application\n  *  It must be using Spring's static resources support\n  *  It must have a non-permitAll authorization rule applied to the static resources support",
+          "Severity": "CRITICAL",
+          "CweIDs": [
+            "CWE-770"
+          ],
+          "VendorSeverity": {
+            "ghsa": 4,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 9.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 7.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38821",
+            "https://github.com/spring-projects/spring-security",
+            "https://github.com/spring-projects/spring-security/commit/0e257b56ce35402558a260ffa6b368982f9a7934",
+            "https://github.com/spring-projects/spring-security/commit/4ce7cde15599c0447163fd46bac616e03318bf5b",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38821",
+            "https://spring.io/security/cve-2024-38821",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38821"
+          ],
+          "PublishedDate": "2024-10-28T07:15:07.633Z",
+          "LastModifiedDate": "2024-10-28T13:58:09.23Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38827",
+          "PkgID": "org.springframework:spring-beans:6.1.3",
+          "PkgName": "org.springframework:spring-beans",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-beans@6.1.3",
+            "UID": "bec965248182a8a0"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: authorization bypass for case sensitive comparisons",
+          "Description": "The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-639"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38827",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "https://github.com/spring-projects/spring-framework/issues/33708",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38827",
+            "https://spring.io/security/cve-2024-38827",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38827"
+          ],
+          "PublishedDate": "2024-12-02T15:15:11.27Z",
+          "LastModifiedDate": "2024-12-02T15:15:11.27Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38820",
+          "PkgID": "org.springframework:spring-context:6.1.3",
+          "PkgName": "org.springframework:spring-context",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-context@6.1.3",
+            "UID": "bb70331a4c9083aa"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38820",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "The fix for CVE-2022-22968 made disallowedFieldspatterns in DataBinder ...",
+          "Description": "The fix for CVE-2022-22968 made disallowedFields patterns in DataBinder case insensitive. However, String.toLowerCase() has some Locale dependent exceptions that could potentially result in fields not protected as expected.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-178"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "nvd": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            },
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/23656aebc6c7d0f9faff1080981eb4d55eff296c",
+            "https://github.com/spring-projects/spring-framework/commits/v6.2.0-RC2",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38820",
+            "https://security.netapp.com/advisory/ntap-20241129-0003",
+            "https://security.netapp.com/advisory/ntap-20241129-0003/",
+            "https://spring.io/security/cve-2024-38820"
+          ],
+          "PublishedDate": "2024-10-18T06:15:03.333Z",
+          "LastModifiedDate": "2024-11-29T12:15:07.007Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38827",
+          "PkgID": "org.springframework:spring-context:6.1.3",
+          "PkgName": "org.springframework:spring-context",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-context@6.1.3",
+            "UID": "bb70331a4c9083aa"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: authorization bypass for case sensitive comparisons",
+          "Description": "The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-639"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38827",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "https://github.com/spring-projects/spring-framework/issues/33708",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38827",
+            "https://spring.io/security/cve-2024-38827",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38827"
+          ],
+          "PublishedDate": "2024-12-02T15:15:11.27Z",
+          "LastModifiedDate": "2024-12-02T15:15:11.27Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38827",
+          "PkgID": "org.springframework:spring-core:6.1.3",
+          "PkgName": "org.springframework:spring-core",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-core@6.1.3",
+            "UID": "831f907e447628a0"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: authorization bypass for case sensitive comparisons",
+          "Description": "The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-639"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38827",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "https://github.com/spring-projects/spring-framework/issues/33708",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38827",
+            "https://spring.io/security/cve-2024-38827",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38827"
+          ],
+          "PublishedDate": "2024-12-02T15:15:11.27Z",
+          "LastModifiedDate": "2024-12-02T15:15:11.27Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38827",
+          "PkgID": "org.springframework:spring-expression:6.1.3",
+          "PkgName": "org.springframework:spring-expression",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-expression@6.1.3",
+            "UID": "17e6dff62fea839"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: authorization bypass for case sensitive comparisons",
+          "Description": "The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-639"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38827",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "https://github.com/spring-projects/spring-framework/issues/33708",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38827",
+            "https://spring.io/security/cve-2024-38827",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38827"
+          ],
+          "PublishedDate": "2024-12-02T15:15:11.27Z",
+          "LastModifiedDate": "2024-12-02T15:15:11.27Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38827",
+          "PkgID": "org.springframework:spring-jdbc:6.1.3",
+          "PkgName": "org.springframework:spring-jdbc",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-jdbc@6.1.3",
+            "UID": "4493fc41c567ba74"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.14",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-security: authorization bypass for case sensitive comparisons",
+          "Description": "The usage of String.toLowerCase() and String.toUpperCase() has some Locale dependent exceptions that could potentially result in authorization rules not working properly.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-639"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38827",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/11d4272ff48b4a4dabc4b28dfbff0364a4204bc9",
+            "https://github.com/spring-projects/spring-framework/issues/33708",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38827",
+            "https://spring.io/security/cve-2024-38827",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38827"
+          ],
+          "PublishedDate": "2024-12-02T15:15:11.27Z",
+          "LastModifiedDate": "2024-12-02T15:15:11.27Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22243",
+          "PkgID": "org.springframework:spring-web:6.1.3",
+          "PkgName": "org.springframework:spring-web",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-web@6.1.3",
+            "UID": "847df28d5c9f0f4c"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.4, 6.0.17, 5.3.32",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22243",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "springframework: URL Parsing with Host Validation",
+          "Description": "Applications that use UriComponentsBuilder to parse an externally provided URL (e.g. through a query parameter) AND perform validation checks on the host of the parsed URL may be vulnerable to a  open redirect https://cwe.mitre.org/data/definitions/601.html  attack or to a SSRF attack if the URL is used after passing validation checks.\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-601"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:N/I:L/A:N",
+              "V3Score": 3.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-22243",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22243",
+            "https://security.netapp.com/advisory/ntap-20240524-0001",
+            "https://security.netapp.com/advisory/ntap-20240524-0001/",
+            "https://spring.io/security/cve-2024-22243",
+            "https://www.cve.org/CVERecord?id=CVE-2024-22243"
+          ],
+          "PublishedDate": "2024-02-23T05:15:08.143Z",
+          "LastModifiedDate": "2024-08-22T15:35:05.027Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22259",
+          "PkgID": "org.springframework:spring-web:6.1.3",
+          "PkgName": "org.springframework:spring-web",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-web@6.1.3",
+            "UID": "847df28d5c9f0f4c"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.5, 6.0.18, 5.3.33",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22259",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "springframework: URL Parsing with Host Validation",
+          "Description": "Applications that use UriComponentsBuilder in Spring Framework to parse an externally provided URL (e.g. through a query parameter) AND perform validation checks on the host of the parsed URL may be vulnerable to a  open redirect https://cwe.mitre.org/data/definitions/601.html  attack or to a SSRF attack if the URL is used after passing validation checks.\n\nThis is the same as  CVE-2024-22243 https://spring.io/security/cve-2024-22243 , but with different input.\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-601"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-22259",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/297cbae2990e1413537c55845a7e0ea0ffd9f9bb",
+            "https://github.com/spring-projects/spring-framework/commit/381f790329a48b74c2a49fc1384dd68ca9153501",
+            "https://github.com/spring-projects/spring-framework/commit/f2fd2f12269c6a781c5b2c20b3c24141055a3d68",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22259",
+            "https://security.netapp.com/advisory/ntap-20240524-0002",
+            "https://security.netapp.com/advisory/ntap-20240524-0002/",
+            "https://spring.io/security/cve-2024-22259",
+            "https://www.cve.org/CVERecord?id=CVE-2024-22259"
+          ],
+          "PublishedDate": "2024-03-16T05:15:20.83Z",
+          "LastModifiedDate": "2024-07-03T01:47:10.08Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-22262",
+          "PkgID": "org.springframework:spring-web:6.1.3",
+          "PkgName": "org.springframework:spring-web",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-web@6.1.3",
+            "UID": "847df28d5c9f0f4c"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "5.3.34, 6.0.19, 6.1.6",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22262",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "springframework: URL Parsing with Host Validation",
+          "Description": "Applications that use UriComponentsBuilder to parse an externally provided URL (e.g. through a query parameter) AND perform validation checks on the host of the parsed URL may be vulnerable to a  open redirect https://cwe.mitre.org/data/definitions/601.html  attack or to a SSRF attack if the URL is used after passing validation checks.\n\nThis is the same as  CVE-2024-22259 https://spring.io/security/cve-2024-22259  and  CVE-2024-22243 https://spring.io/security/cve-2024-22243 , but with different input.\n\n",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-601",
+            "CWE-918"
+          ],
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 8.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-22262",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/blob/main/spring-web/src/main/java/org/springframework/web/util/UriComponentsBuilder.java",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-22262",
+            "https://security.netapp.com/advisory/ntap-20240524-0003",
+            "https://security.netapp.com/advisory/ntap-20240524-0003/",
+            "https://spring.io/security/cve-2024-22262",
+            "https://www.cve.org/CVERecord?id=CVE-2024-22262"
+          ],
+          "PublishedDate": "2024-04-16T06:15:46.27Z",
+          "LastModifiedDate": "2024-08-27T14:35:01.16Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38809",
+          "PkgID": "org.springframework:spring-web:6.1.3",
+          "PkgName": "org.springframework:spring-web",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-web@6.1.3",
+            "UID": "847df28d5c9f0f4c"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "5.3.38, 6.0.23, 6.1.12",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38809",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "org.springframework:spring-web: Spring Framework DoS via conditional HTTP request",
+          "Description": "Applications that parse ETags from \"If-Match\" or \"If-None-Match\" request headers are vulnerable to DoS attack.\n\nUsers of affected versions should upgrade to the corresponding fixed version.\n\nUsers of older, unsupported versions could enforce a size limit on \"If-Match\" and \"If-None-Match\" headers, e.g. through a Filter.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-400"
+          ],
+          "VendorSeverity": {
+            "ghsa": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "github.com/spring-projects/spring-framework",
+            "http://github.com/spring-projects/spring-framework",
+            "https://access.redhat.com/security/cve/CVE-2024-38809",
+            "https://github.com/spring-projects/spring-framework/commit/582bfccbb72e5c8959a0b472d1dc7d03a20520f3",
+            "https://github.com/spring-projects/spring-framework/commit/8d16a50907c11f7e6b407d878a26e84eba08a533",
+            "https://github.com/spring-projects/spring-framework/commit/bb17ad8314b81850a939fd265fb53b3361705e85",
+            "https://github.com/spring-projects/spring-framework/issues/33372",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38809",
+            "https://spring.io/security/cve-2024-38809",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38809"
+          ],
+          "PublishedDate": "2024-09-27T17:15:12.393Z",
+          "LastModifiedDate": "2024-09-30T12:45:57.823Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2024-38816",
+          "PkgID": "org.springframework:spring-webmvc:6.1.3",
+          "PkgName": "org.springframework:spring-webmvc",
+          "PkgIdentifier": {
+            "PURL": "pkg:maven/org.springframework/spring-webmvc@6.1.3",
+            "UID": "ae2de900c62bdcaa"
+          },
+          "InstalledVersion": "6.1.3",
+          "FixedVersion": "6.1.13",
+          "Status": "fixed",
+          "Layer": {},
+          "SeveritySource": "ghsa",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38816",
+          "DataSource": {
+            "ID": "ghsa",
+            "Name": "GitHub Security Advisory Maven",
+            "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Amaven"
+          },
+          "Title": "spring-webmvc: Path Traversal Vulnerability in Spring Applications Using RouterFunctions and FileSystemResource",
+          "Description": "Applications serving static resources through the functional web frameworks WebMvc.fn or WebFlux.fn are vulnerable to path traversal attacks. An attacker can craft malicious HTTP requests and obtain any file on the file system that is also accessible to the process in which the Spring application is running.\n\nSpecifically, an application is vulnerable when both of the following are true:\n\n  *  the web application uses RouterFunctions to serve static resources\n  *  resource handling is explicitly configured with a FileSystemResource location\n\n\nHowever, malicious requests are blocked and rejected when any of the following is true:\n\n  *  the  Spring Security HTTP Firewall https://docs.spring.io/spring-security/reference/servlet/exploits/firewall.html  is in use\n  *  the application runs on Tomcat or Jetty",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "ghsa": 3,
+            "redhat": 3
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2024-38816",
+            "https://github.com/spring-projects/spring-framework",
+            "https://github.com/spring-projects/spring-framework/commit/d86bf8b2056429edf5494456cffcb2b243331c49",
+            "https://nvd.nist.gov/vuln/detail/CVE-2024-38816",
+            "https://spring.io/security/cve-2024-38816",
+            "https://www.cve.org/CVERecord?id=CVE-2024-38816"
+          ],
+          "PublishedDate": "2024-09-13T06:15:11.19Z",
+          "LastModifiedDate": "2024-09-13T14:06:04.777Z"
+        }
+      ]
+    }
+  ]
+}
