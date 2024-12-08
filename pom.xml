@@ -6,20 +6,19 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.2</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.Spring-Boot-MVC</groupId>
+    <groupId>com.spring.boot</groupId>
     <artifactId>ExpensesTracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>ExpensesTracker</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>17</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
+        <!-- Spring Boot Starter Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -44,11 +43,15 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity6</artifactId>
         </dependency>
+
+        <!-- MySQL Connector -->
         <dependency>
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <scope>runtime</scope>
         </dependency>
+
+        <!-- Testing Dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -74,12 +77,12 @@
         <repository>
             <id>nexus-releases</id>
             <name>Nexus Release Repository</name>
-            <url>http://<NEXUS_URL>/repository/maven-releases/</url>
+            <url>http://your-nexus-domain/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <name>Nexus Snapshot Repository</name>
-            <url>http://<NEXUS_URL>/repository/maven-snapshots/</url>
+            <url>http://your-nexus-domain/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
