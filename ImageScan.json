@@ -1,7 +1,7 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2024-12-08T17:45:09.007586595Z",
-  "ArtifactName": "onlinelearningofficial/trackingapp:19",
+  "CreatedAt": "2024-12-08T17:53:39.430538006Z",
+  "ArtifactName": "onlinelearningofficial/trackingapp:20",
   "ArtifactType": "container_image",
   "Metadata": {
     "OS": {
@@ -9,21 +9,21 @@
       "Name": "3.14.0",
       "EOSL": true
     },
-    "ImageID": "sha256:189b247e9bb3b6e6006b1fe00e69b37626887716bc23681fb71f6143e8a90601",
+    "ImageID": "sha256:6477be91acef3329e81c62e768fa7c5c74b6203436fe9b7032f26bdbcf39db1f",
     "DiffIDs": [
       "sha256:72e830a4dff5f0d5225cdc0a320e85ab1ce06ea5673acfe8d83a7645cbd0e9cf",
       "sha256:5836ece05bfd8a5425efcf10075dfd206079fc6c10880dabbc38dd9701ab44bf",
       "sha256:34f7184834b2dbb736d5d07c9835e4ca13289b9a90afb40780f7c8a68f2f6ccb",
-      "sha256:3f5a81f3a9c847979e8cc1cc166c3d9cc4260f832ee8a0904d9390eb733c1f15",
-      "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+      "sha256:3ec66608698558b4f966138b5a6d6fee079ee65635a4a4ff1d5ac96eec57c418",
+      "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
     ],
     "RepoTags": [
-      "onlinelearningofficial/trackingapp:19"
+      "onlinelearningofficial/trackingapp:20"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "container": "9e30fb255b1090ce59df33965b25d40cf25a2922d7fbc2097dc7e276140b80b9",
-      "created": "2024-12-08T17:45:03.804060041Z",
+      "container": "e113b88ddb73fe1c4242e63f4cad8b7e6fe8d55ec470b5be5e92e0411226f061",
+      "created": "2024-12-08T17:53:34.364493462Z",
       "docker_version": "26.1.3",
       "history": [
         {
@@ -64,20 +64,20 @@
           "empty_layer": true
         },
         {
-          "created": "2024-12-08T17:24:15.490874182Z",
+          "created": "2024-12-08T17:53:33.143631961Z",
           "created_by": "/bin/sh -c #(nop) WORKDIR /app"
         },
         {
-          "created": "2024-12-08T17:45:03.50755432Z",
-          "created_by": "/bin/sh -c #(nop) COPY file:8414e326249c890d1d7c83c9caf7351cad1019cb74683b71a5d8053ec5110898 in /app/target/expenseapp.jar "
+          "created": "2024-12-08T17:53:34.08711592Z",
+          "created_by": "/bin/sh -c #(nop) COPY file:1a1ccfce6e1542d2ddcc7ec70aed32f92187edea3df0f8ad2fb91959d407ef5f in /app/target/expenseapp.jar "
         },
         {
-          "created": "2024-12-08T17:45:03.747125861Z",
+          "created": "2024-12-08T17:53:34.297711635Z",
           "created_by": "/bin/sh -c #(nop)  EXPOSE 8080",
           "empty_layer": true
         },
         {
-          "created": "2024-12-08T17:45:03.804060041Z",
+          "created": "2024-12-08T17:53:34.364493462Z",
           "created_by": "/bin/sh -c #(nop)  ENTRYPOINT [\"java\" \"-jar\" \"/app/target/expenseapp.jar\"]",
           "empty_layer": true
         }
@@ -89,8 +89,8 @@
           "sha256:72e830a4dff5f0d5225cdc0a320e85ab1ce06ea5673acfe8d83a7645cbd0e9cf",
           "sha256:5836ece05bfd8a5425efcf10075dfd206079fc6c10880dabbc38dd9701ab44bf",
           "sha256:34f7184834b2dbb736d5d07c9835e4ca13289b9a90afb40780f7c8a68f2f6ccb",
-          "sha256:3f5a81f3a9c847979e8cc1cc166c3d9cc4260f832ee8a0904d9390eb733c1f15",
-          "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+          "sha256:3ec66608698558b4f966138b5a6d6fee079ee65635a4a4ff1d5ac96eec57c418",
+          "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
         ]
       },
       "config": {
@@ -104,7 +104,7 @@
           "JAVA_HOME=/opt/openjdk-17",
           "JAVA_VERSION=17-ea+14"
         ],
-        "Image": "sha256:85d30a88099df4fdeabebb071764dcb315afad37ceab277718248aa551a02b92",
+        "Image": "sha256:ecb9031b39b40fb58408790c51c66012c4dafd1f09705c4d06bea78a513fbe3f",
         "WorkingDir": "/app",
         "ExposedPorts": {
           "8080/tcp": {}
@@ -114,7 +114,7 @@
   },
   "Results": [
     {
-      "Target": "onlinelearningofficial/trackingapp:19 (alpine 3.14.0)",
+      "Target": "onlinelearningofficial/trackingapp:20 (alpine 3.14.0)",
       "Class": "os-pkgs",
       "Type": "alpine",
       "Vulnerabilities": [
@@ -4029,7 +4029,7 @@
           "FixedVersion": "11.0.0-M21, 10.1.25, 9.0.90",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-34750",
@@ -4100,7 +4100,7 @@
           "FixedVersion": "8.5.99, 9.0.86, 10.1.19, 11.0.0-M17",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-24549",
@@ -4178,7 +4178,7 @@
           "FixedVersion": "11.0.0-M17, 10.1.19, 9.0.86, 8.5.99",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-23672",
@@ -4260,7 +4260,7 @@
           "FixedVersion": "6.1.7, 6.2.2",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22234",
@@ -4314,7 +4314,7 @@
           "FixedVersion": "5.7.12, 5.8.11, 6.1.8, 6.2.3",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22257",
@@ -4368,7 +4368,7 @@
           "FixedVersion": "5.7.13, 5.8.15, 6.2.7, 6.0.13, 6.1.11, 6.3.4",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38821",
@@ -4421,7 +4421,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
@@ -4474,7 +4474,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38820",
@@ -4527,7 +4527,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
@@ -4580,7 +4580,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
@@ -4633,7 +4633,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
@@ -4686,7 +4686,7 @@
           "FixedVersion": "6.1.14",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38827",
@@ -4739,7 +4739,7 @@
           "FixedVersion": "6.1.4, 6.0.17, 5.3.32",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22243",
@@ -4793,7 +4793,7 @@
           "FixedVersion": "6.1.5, 6.0.18, 5.3.33",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22259",
@@ -4849,7 +4849,7 @@
           "FixedVersion": "5.3.34, 6.0.19, 6.1.6",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-22262",
@@ -4904,7 +4904,7 @@
           "FixedVersion": "5.3.38, 6.0.23, 6.1.12",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38809",
@@ -4960,7 +4960,7 @@
           "FixedVersion": "6.1.13",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:ced5b4168756cea6b6ec3b904f235af35bba410c86c2e8948257ff44468a23fa"
+            "DiffID": "sha256:f9c16efcf648e79f6f38c52b1daad2ca0f3ebce8740d17ecca0435db1f72d7a6"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2024-38816",
