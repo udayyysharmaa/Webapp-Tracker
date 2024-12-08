@@ -1,0 +1,180 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'maven'
+        jdk 'jdk17'
+    }
+    environment {
+        SONAR_HOME = tool 'sonar-scanner'
+        IMAGE_NAME = "onlinelearningofficial/trackingapp"
+        TAG = "${env.BUILD_NUMBER}"
+    }
+    
+
+    stages {
+        stage('Clone The Project') {
+            steps {
+                git 'https://github.com/udayyysharmaa/Webapp-Tracker.git'
+            }
+        }
+        stage('Compile The Project') {
+            steps {
+                sh 'mvn compile -DskipTests=true'
+            }
+        }
+        stage('Test The Project') {
+            steps {
+                sh 'mvn test -DskipTests=true'
+            }
+        }
+        stage('Build The Project') {
+            steps {
+                sh 'mvn clean package -DskipTests=true'
+            }
+        }
+        stage('Scan the File') {
+            steps {
+                sh 'trivy fs --format json -o filescan.json .'
+            }
+        }
+        stage('Sonarqube Analysis') {
+            steps {
+                withSonarQubeEnv('sonar') {
+                    sh '''
+                        $SONAR_HOME/bin/sonar-scanner \
+                        -Dsonar.projectName=mywebapp \
+                        -Dsonar.projectKey=mywebapp \
+                        -Dsonar.java.binaries=target \
+                        -Dsonar.sources=src
+                    '''
+                }
+            }
+        }
+        stage('Qality Gate Check') {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: false
+                }
+                
+            }
+        }
+        stage('Record the Artifacts to Nexus') {
+            steps {
+                withMaven(globalMavenSettingsConfig: 'maven', jdk: 'jdk17', maven: 'maven', mavenSettingsConfig: '', traceability: true) {
+                    sh 'mvn deploy -DskipTests=true '
+                }
+                
+            }
+        }
+        stage('Creating Image') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-hub'){
+                        sh 'docker build -t ${IMAGE_NAME}:${TAG} .'
+                    }
+                }
+            }
+        }
+        stage('Scan the Image') {
+            steps {
+                sh 'trivy image --format json -o ImageScan.json ${IMAGE_NAME}:${TAG}'
+            }
+        }
+        stage('Push To Docker Hub') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-hub'){
+                        sh 'docker push  ${IMAGE_NAME}:${TAG} '
+                    }
+                }
+            }
+        }
+        stage('Update Kubernetes Manifest') {
+            steps {
+                script {
+                sh """
+                sed -i '16s|image: .*|image: ${IMAGE_NAME}:${TAG}|' webapp.yml
+                """
+                    
+                }
+                
+            }
+            
+        }
+        stage('Commit and Change in Github') {
+            steps {
+                script {
+                    withCredentials([usernamePassword(credentialsId: 'Github-cred', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
+                    sh """
+                    git config --global user.email "udaysharmaniit12345@gmail.com"
+                    git config --global user.name "udayyysharmaa"
+                    git remote set-url origin https://${USER}:${PASS}@github.com/udayyysharmaa/Webapp-Tracker.git
+                    git pull origin master
+                    git add webapp.yml ImageScan.json filescan.json
+                    git commit -m "Update image to ${IMAGE_NAME}:${TAG}" || echo "No changes to commit"
+                    git push origin master
+                    """
+                    }
+                }
+            }
+        }
+        stage('Check and Install Terraform') {
+            steps {
+                script {
+                    if (sh(script: 'which terraform || echo "not found"', returnStatus: true) != 0) {
+                        echo 'Terraform not found, installing...'
+                        sh 'sudo snap install terraform --classic'
+                    } else {
+                        echo 'Terraform is already installed.'
+                    }
+                }
+            }
+        }
+        stage('Check and Create Kubernetes Cluster') {
+            steps {
+                script {
+                    def clusterExists = sh(
+                        script: "kubectl config get-clusters | grep -w 'devopsshack' || echo 'not found'",
+                        returnStdout: true
+                    ).trim()
+                    
+                    if (clusterExists == 'not found') {
+                        echo 'Cluster devopsshack not found. Creating the cluster...'
+                        dir('/home/ubuntu/.jenkins/workspace/Tracking-App/Cluster') {
+                            sh 'terraform init'
+                            sh 'terraform plan'
+                            sleep 20
+                            sh 'terraform apply --auto-approve'
+                            sleep 50
+                            sh 'aws eks --region us-west-2 update-kubeconfig --name devopsshack-cluster'
+                        }
+                    } else {
+                        echo 'Cluster devopsshack already exists.'
+                    }
+                }
+            }
+        }
+        stage('Deploy the application with AWS-EKS') {
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-cred', namespace: 'myweb', restrictKubeConfigAccess: false, serverUrl: 'https://B9B47164C271DCDA96B7427A0A8DBBAC.gr7.us-west-2.eks.amazonaws.com') {
+                    sh 'kubectl apply -f database.yml -n myweb'
+                    sleep 60
+                    sh 'kubectl apply -f webapp.yml -n myweb'
+                }
+            }
+        }
+        stage('Verify the  AWS-EKS') {
+            steps {
+                withKubeConfig(caCertificate: '', clusterName: 'devopsshack-cluster', contextName: '', credentialsId: 'k8s-cred', namespace: 'myweb', restrictKubeConfigAccess: false, serverUrl: 'https://B9B47164C271DCDA96B7427A0A8DBBAC.gr7.us-west-2.eks.amazonaws.com') {
+                    sh "kubectl get pods -n myweb"
+                    sh "kubectl get svc -n myweb"
+                }
+            }
+        }
+        
+    }
+}
+
+
+
