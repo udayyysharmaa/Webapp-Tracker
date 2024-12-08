@@ -1,0 +1,43 @@
+# WebApp Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+  namespace: myweb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: onlinelearningofficial/webapp:v1
+        env:
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://mysql-service:3306/expenses_tracker"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "root"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "Test@123"
+        ports:
+        - containerPort: 8080
+          name: webapp
+---
+# WebApp Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-service
+  namespace: myweb
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: webapp
